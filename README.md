@@ -6,7 +6,7 @@ Clone recursively:
 
 `git clone --recursive https://github.com/NMMI/EGO.git`
 
-## Use, the command to launch EGO robot
+## Usage, the command to launch EGO robot
 
 The command to launch the sensor:
 
