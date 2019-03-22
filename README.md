@@ -4,7 +4,7 @@
 
 Clone recursively:
 
-`git clone --recursive https://github.com/NMMI/EGO.git
+`git clone --recursive https://github.com/NMMI/EGO.git`
 
 ## Use, the command to launch EGO robot
 
