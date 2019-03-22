@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<launch>
+
+	<node name="qb_manager_node_right" pkg="qb_frank_controller" type="manager_node" respawn="false" output="screen">
+	    <param name="chain" value="right"/>
+	    <param name="port" value="/dev/ttyUSB0"/>
+	</node>
+
+	<node name="qb_manager_node_left" pkg="qb_frank_controller" type="manager_node" respawn="false" output="screen">
+	    <param name="chain" value="left"/>
+	    <param name="port" value="/dev/ttyUSB2"/>
+	</node>
+
+  <node pkg="arms_inv_kin" name="inv_kin_gravity_comp" type="inv_kin_gravity_comp_node" output="screen"/>
+
+
+
+
+</launch>

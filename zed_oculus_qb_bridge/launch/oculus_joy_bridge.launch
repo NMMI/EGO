@@ -1,0 +1,29 @@
+<launch>
+
+<node pkg="rosserial_server" name="socket" type="socket_node" output="screen"/>
+
+  <!-- <node pkg="arms_inv_kin" name="myo1" type="myo-rawNode.py"/> -->
+  <arg name="yamlFile" default="$(find zed_oculus_qb_bridge)/config/conf_oculus_joy.yaml"/>
+  <rosparam command="load" file="$(arg yamlFile)"/>
+
+  <!-- Gestisce le due camere zed/rviz -->
+  <!-- <node pkg="zed_oculus_qb_bridge" name="rviz_zed_oculus_interface" type="rviz_zed_oculus_interface" output="screen"/> -->
+
+   <group ns="left_arm">
+    <node pkg="zed_oculus_qb_bridge" name="Joy_oculus_bridge" type="Joy_oculus_bridge_node" output="screen"/>
+    <node pkg="zed_oculus_qb_bridge" name="video_stream" type="video_stream" output="screen"/> 
+  </group>
+
+  <group ns="right_arm">
+    <node pkg="zed_oculus_qb_bridge" name="Joy_oculus_bridge" type="Joy_oculus_bridge_node" output="screen"/>
+    <node pkg="zed_oculus_qb_bridge" name="video_stream" type="video_stream" output="screen"/>
+  </group>
+
+<!-- controllo cubi testa -->
+  <node pkg="zed_oculus_qb_bridge" name="head_bridge" type="head_bridge_node" output="screen"/> 
+
+
+</launch>
+
+
+  

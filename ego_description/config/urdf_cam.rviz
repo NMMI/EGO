@@ -1,0 +1,1104 @@
+Panels:
+  - Class: rviz/Displays
+    Help Height: 78
+    Name: Displays
+    Property Tree Widget:
+      Expanded:
+        - /Global Options1
+        - /Status1
+        - /TF1
+        - /TF1/Frames1
+        - /PointCloud21
+        - /MeshDisplayCustom1
+        - /MeshDisplayCustom2
+      Splitter Ratio: 0.5
+    Tree Height: 297
+  - Class: rviz/Selection
+    Name: Selection
+  - Class: rviz/Tool Properties
+    Expanded:
+      - /2D Pose Estimate1
+      - /2D Nav Goal1
+      - /Publish Point1
+    Name: Tool Properties
+    Splitter Ratio: 0.588679016
+  - Class: rviz/Views
+    Expanded:
+      - /Current View1
+    Name: Views
+    Splitter Ratio: 0.5
+  - Class: rviz/Time
+    Experimental: false
+    Name: Time
+    SyncMode: 0
+    SyncSource: Image1
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Alpha: 0.5
+      Cell Size: 1
+      Class: rviz/Grid
+      Color: 160; 160; 164
+      Enabled: true
+      Line Style:
+        Line Width: 0.0299999993
+        Value: Lines
+      Name: Grid
+      Normal Cell Count: 0
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Plane: XY
+      Plane Cell Count: 10
+      Reference Frame: <Fixed Frame>
+      Value: true
+    - Class: rviz/Axes
+      Enabled: true
+      Length: 0.200000003
+      Name: Axes
+      Radius: 0.00999999978
+      Reference Frame: <Fixed Frame>
+      Value: true
+    - Class: rviz/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: false
+        base_link:
+          Value: true
+        camera_L:
+          Value: false
+        camera_R:
+          Value: false
+        display_L:
+          Value: false
+        display_R:
+          Value: false
+        head:
+          Value: false
+        joy_left:
+          Value: true
+        joy_right:
+          Value: true
+        left_EE_flange:
+          Value: false
+        left_arm_cube:
+          Value: false
+        left_arm_flage:
+          Value: false
+        left_elbow_cube:
+          Value: false
+        left_elbow_flange:
+          Value: false
+        left_forearm_cube:
+          Value: false
+        left_forearm_flange:
+          Value: false
+        left_hand_clamp:
+          Value: false
+        left_hand_index_distal_link:
+          Value: false
+        left_hand_index_fake_link1:
+          Value: false
+        left_hand_index_fake_link2:
+          Value: false
+        left_hand_index_fake_link3:
+          Value: false
+        left_hand_index_knuckle_link:
+          Value: false
+        left_hand_index_middle_link:
+          Value: false
+        left_hand_index_proximal_link:
+          Value: false
+        left_hand_invisible_wire_link:
+          Value: false
+        left_hand_kuka_coupler:
+          Value: false
+        left_hand_kuka_coupler_bottom:
+          Value: false
+        left_hand_little_distal_link:
+          Value: false
+        left_hand_little_fake_link1:
+          Value: false
+        left_hand_little_fake_link2:
+          Value: false
+        left_hand_little_fake_link3:
+          Value: false
+        left_hand_little_knuckle_link:
+          Value: false
+        left_hand_little_middle_link:
+          Value: false
+        left_hand_little_proximal_link:
+          Value: false
+        left_hand_middle_distal_link:
+          Value: false
+        left_hand_middle_fake_link1:
+          Value: false
+        left_hand_middle_fake_link2:
+          Value: false
+        left_hand_middle_fake_link3:
+          Value: false
+        left_hand_middle_knuckle_link:
+          Value: false
+        left_hand_middle_middle_link:
+          Value: false
+        left_hand_middle_proximal_link:
+          Value: false
+        left_hand_palm_link:
+          Value: false
+        left_hand_ring_distal_link:
+          Value: false
+        left_hand_ring_fake_link1:
+          Value: false
+        left_hand_ring_fake_link2:
+          Value: false
+        left_hand_ring_fake_link3:
+          Value: false
+        left_hand_ring_knuckle_link:
+          Value: false
+        left_hand_ring_middle_link:
+          Value: false
+        left_hand_ring_proximal_link:
+          Value: false
+        left_hand_softhand_base:
+          Value: false
+        left_hand_thumb_distal_link:
+          Value: false
+        left_hand_thumb_fake_link1:
+          Value: false
+        left_hand_thumb_fake_link3:
+          Value: false
+        left_hand_thumb_knuckle_link:
+          Value: false
+        left_hand_thumb_proximal_link:
+          Value: false
+        left_shoulder_cube:
+          Value: false
+        left_shoulder_flange:
+          Value: false
+        neck:
+          Value: false
+        odom:
+          Value: true
+        right_EE_flange:
+          Value: false
+        right_arm_cube:
+          Value: false
+        right_arm_flage:
+          Value: false
+        right_elbow_cube:
+          Value: false
+        right_elbow_flange:
+          Value: false
+        right_forearm_cube:
+          Value: false
+        right_forearm_flange:
+          Value: false
+        right_hand_clamp:
+          Value: false
+        right_hand_index_distal_link:
+          Value: false
+        right_hand_index_fake_link1:
+          Value: false
+        right_hand_index_fake_link2:
+          Value: false
+        right_hand_index_fake_link3:
+          Value: false
+        right_hand_index_knuckle_link:
+          Value: false
+        right_hand_index_middle_link:
+          Value: false
+        right_hand_index_proximal_link:
+          Value: false
+        right_hand_invisible_wire_link:
+          Value: false
+        right_hand_kuka_coupler:
+          Value: false
+        right_hand_kuka_coupler_bottom:
+          Value: false
+        right_hand_little_distal_link:
+          Value: false
+        right_hand_little_fake_link1:
+          Value: false
+        right_hand_little_fake_link2:
+          Value: false
+        right_hand_little_fake_link3:
+          Value: false
+        right_hand_little_knuckle_link:
+          Value: false
+        right_hand_little_middle_link:
+          Value: false
+        right_hand_little_proximal_link:
+          Value: false
+        right_hand_middle_distal_link:
+          Value: false
+        right_hand_middle_fake_link1:
+          Value: false
+        right_hand_middle_fake_link2:
+          Value: false
+        right_hand_middle_fake_link3:
+          Value: false
+        right_hand_middle_knuckle_link:
+          Value: false
+        right_hand_middle_middle_link:
+          Value: false
+        right_hand_middle_proximal_link:
+          Value: false
+        right_hand_palm_link:
+          Value: false
+        right_hand_ring_distal_link:
+          Value: false
+        right_hand_ring_fake_link1:
+          Value: false
+        right_hand_ring_fake_link2:
+          Value: false
+        right_hand_ring_fake_link3:
+          Value: false
+        right_hand_ring_knuckle_link:
+          Value: false
+        right_hand_ring_middle_link:
+          Value: false
+        right_hand_ring_proximal_link:
+          Value: false
+        right_hand_softhand_base:
+          Value: false
+        right_hand_thumb_distal_link:
+          Value: false
+        right_hand_thumb_fake_link1:
+          Value: false
+        right_hand_thumb_fake_link3:
+          Value: false
+        right_hand_thumb_knuckle_link:
+          Value: false
+        right_hand_thumb_proximal_link:
+          Value: false
+        right_shoulder_cube:
+          Value: false
+        right_shoulder_flange:
+          Value: false
+        stereo_link:
+          Value: false
+        wheel_L:
+          Value: false
+        wheel_R:
+          Value: false
+      Marker Scale: 0.5
+      Name: TF
+      Show Arrows: false
+      Show Axes: true
+      Show Names: true
+      Tree:
+        odom:
+          base_link:
+            left_shoulder_flange:
+              left_shoulder_cube:
+                left_arm_flage:
+                  left_arm_cube:
+                    left_elbow_flange:
+                      left_elbow_cube:
+                        left_forearm_flange:
+                          left_forearm_cube:
+                            left_EE_flange:
+                              left_hand_kuka_coupler_bottom:
+                                left_hand_kuka_coupler:
+                                  left_hand_clamp:
+                                    left_hand_softhand_base:
+                                      left_hand_palm_link:
+                                        left_hand_index_knuckle_link:
+                                          left_hand_index_fake_link1:
+                                            left_hand_index_proximal_link:
+                                              left_hand_index_fake_link2:
+                                                left_hand_index_middle_link:
+                                                  left_hand_index_fake_link3:
+                                                    left_hand_index_distal_link:
+                                                      {}
+                                        left_hand_invisible_wire_link:
+                                          {}
+                                        left_hand_little_knuckle_link:
+                                          left_hand_little_fake_link1:
+                                            left_hand_little_proximal_link:
+                                              left_hand_little_fake_link2:
+                                                left_hand_little_middle_link:
+                                                  left_hand_little_fake_link3:
+                                                    left_hand_little_distal_link:
+                                                      {}
+                                        left_hand_middle_knuckle_link:
+                                          left_hand_middle_fake_link1:
+                                            left_hand_middle_proximal_link:
+                                              left_hand_middle_fake_link2:
+                                                left_hand_middle_middle_link:
+                                                  left_hand_middle_fake_link3:
+                                                    left_hand_middle_distal_link:
+                                                      {}
+                                        left_hand_ring_knuckle_link:
+                                          left_hand_ring_fake_link1:
+                                            left_hand_ring_proximal_link:
+                                              left_hand_ring_fake_link2:
+                                                left_hand_ring_middle_link:
+                                                  left_hand_ring_fake_link3:
+                                                    left_hand_ring_distal_link:
+                                                      {}
+                                        left_hand_thumb_knuckle_link:
+                                          left_hand_thumb_fake_link1:
+                                            left_hand_thumb_proximal_link:
+                                              left_hand_thumb_fake_link3:
+                                                left_hand_thumb_distal_link:
+                                                  {}
+            neck:
+              head:
+                {}
+            right_shoulder_flange:
+              right_shoulder_cube:
+                right_arm_flage:
+                  right_arm_cube:
+                    right_elbow_flange:
+                      right_elbow_cube:
+                        right_forearm_flange:
+                          right_forearm_cube:
+                            right_EE_flange:
+                              right_hand_kuka_coupler_bottom:
+                                right_hand_kuka_coupler:
+                                  right_hand_clamp:
+                                    right_hand_softhand_base:
+                                      right_hand_palm_link:
+                                        right_hand_index_knuckle_link:
+                                          right_hand_index_fake_link1:
+                                            right_hand_index_proximal_link:
+                                              right_hand_index_fake_link2:
+                                                right_hand_index_middle_link:
+                                                  right_hand_index_fake_link3:
+                                                    right_hand_index_distal_link:
+                                                      {}
+                                        right_hand_invisible_wire_link:
+                                          {}
+                                        right_hand_little_knuckle_link:
+                                          right_hand_little_fake_link1:
+                                            right_hand_little_proximal_link:
+                                              right_hand_little_fake_link2:
+                                                right_hand_little_middle_link:
+                                                  right_hand_little_fake_link3:
+                                                    right_hand_little_distal_link:
+                                                      {}
+                                        right_hand_middle_knuckle_link:
+                                          right_hand_middle_fake_link1:
+                                            right_hand_middle_proximal_link:
+                                              right_hand_middle_fake_link2:
+                                                right_hand_middle_middle_link:
+                                                  right_hand_middle_fake_link3:
+                                                    right_hand_middle_distal_link:
+                                                      {}
+                                        right_hand_ring_knuckle_link:
+                                          right_hand_ring_fake_link1:
+                                            right_hand_ring_proximal_link:
+                                              right_hand_ring_fake_link2:
+                                                right_hand_ring_middle_link:
+                                                  right_hand_ring_fake_link3:
+                                                    right_hand_ring_distal_link:
+                                                      {}
+                                        right_hand_thumb_knuckle_link:
+                                          right_hand_thumb_fake_link1:
+                                            right_hand_thumb_proximal_link:
+                                              right_hand_thumb_fake_link3:
+                                                right_hand_thumb_distal_link:
+                                                  {}
+            wheel_L:
+              {}
+            wheel_R:
+              {}
+      Update Interval: 0
+      Value: true
+    - Background Color: 10; 15; 45
+      Camera Info Topic: /camera_L/camera_info
+      Class: rviz_camera_stream/CameraPub
+      Display namespace: ""
+      Enabled: true
+      Frame Rate: -1
+      Image Topic: /rviz1/camera_L/image
+      Name: CameraPub1
+      Queue Size: 2
+      Value: true
+      Visibility:
+        Axes: true
+        CameraPub2: true
+        Grid: true
+        Image1: true
+        Image2: true
+        Marker: true
+        MeshDisplayCustom: true
+        PointCloud2: true
+        RobotModel: true
+        TF: true
+        Value: true
+    - Class: rviz/Image
+      Enabled: true
+      Image Topic: /rviz1/camera_L/image
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: Image1
+      Normalize Range: true
+      Queue Size: 2
+      Transport Hint: raw
+      Unreliable: false
+      Value: true
+    - Background Color: 10; 15; 45
+      Camera Info Topic: /camera_R/camera_info
+      Class: rviz_camera_stream/CameraPub
+      Display namespace: ""
+      Enabled: true
+      Frame Rate: -1
+      Image Topic: /rviz1/camera_R/image
+      Name: CameraPub2
+      Queue Size: 2
+      Value: true
+      Visibility:
+        Axes: true
+        CameraPub1: true
+        Grid: true
+        Image1: true
+        Image2: true
+        Marker: true
+        MeshDisplayCustom: true
+        PointCloud2: true
+        RobotModel: true
+        TF: true
+        Value: true
+    - Class: rviz/Image
+      Enabled: true
+      Image Topic: /rviz1/camera_R/image
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: Image2
+      Normalize Range: true
+      Queue Size: 2
+      Transport Hint: raw
+      Unreliable: false
+      Value: true
+    - Alpha: 1
+      Class: rviz/RobotModel
+      Collision Enabled: false
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        head:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_EE_flange:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_arm_cube:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_arm_flage:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_elbow_cube:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_elbow_flange:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_forearm_cube:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_forearm_flange:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_clamp:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_index_distal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_index_fake_link1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_hand_index_fake_link2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_hand_index_fake_link3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_hand_index_knuckle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_index_middle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_index_proximal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_invisible_wire_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_hand_kuka_coupler:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_hand_kuka_coupler_bottom:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_little_distal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_little_fake_link1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_hand_little_fake_link2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_hand_little_fake_link3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_hand_little_knuckle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_little_middle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_little_proximal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_middle_distal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_middle_fake_link1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_hand_middle_fake_link2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_hand_middle_fake_link3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_hand_middle_knuckle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_middle_middle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_middle_proximal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_palm_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_ring_distal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_ring_fake_link1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_hand_ring_fake_link2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_hand_ring_fake_link3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_hand_ring_knuckle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_ring_middle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_ring_proximal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_softhand_base:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_thumb_distal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_thumb_fake_link1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_hand_thumb_fake_link3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        left_hand_thumb_knuckle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_hand_thumb_proximal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_shoulder_cube:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        left_shoulder_flange:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        neck:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_EE_flange:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_arm_cube:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_arm_flage:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_elbow_cube:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_elbow_flange:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_forearm_cube:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_forearm_flange:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_clamp:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_index_distal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_index_fake_link1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_hand_index_fake_link2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_hand_index_fake_link3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_hand_index_knuckle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_index_middle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_index_proximal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_invisible_wire_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_hand_kuka_coupler:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_hand_kuka_coupler_bottom:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_little_distal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_little_fake_link1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_hand_little_fake_link2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_hand_little_fake_link3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_hand_little_knuckle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_little_middle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_little_proximal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_middle_distal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_middle_fake_link1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_hand_middle_fake_link2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_hand_middle_fake_link3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_hand_middle_knuckle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_middle_middle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_middle_proximal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_palm_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_ring_distal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_ring_fake_link1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_hand_ring_fake_link2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_hand_ring_fake_link3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_hand_ring_knuckle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_ring_middle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_ring_proximal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_softhand_base:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_thumb_distal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_thumb_fake_link1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_hand_thumb_fake_link3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        right_hand_thumb_knuckle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_hand_thumb_proximal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_shoulder_cube:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_shoulder_flange:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel_L:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        wheel_R:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Name: RobotModel
+      Robot Description: robot_description
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
+    - Class: rviz/Marker
+      Enabled: true
+      Marker Topic: /right_arrow
+      Name: Marker
+      Namespaces:
+        {}
+      Queue Size: 100
+      Value: true
+    - Class: rviz/Marker
+      Enabled: true
+      Marker Topic: /left_arrow
+      Name: Marker
+      Namespaces:
+        {}
+      Queue Size: 100
+      Value: true
+    - Class: rviz/Marker
+      Enabled: true
+      Marker Topic: /path
+      Name: Marker
+      Namespaces:
+        {}
+      Queue Size: 100
+      Value: true
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/PointCloud2
+      Color: 255; 255; 255
+      Color Transformer: RGB8
+      Decay Time: 0
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Max Intensity: 4096
+      Min Color: 0; 0; 0
+      Min Intensity: 0
+      Name: PointCloud2
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 2
+      Size (m): 0.00999999978
+      Style: Points
+      Topic: /camera/depth_registered/points
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: true
+    - Class: rviz_textured_quads/MeshDisplayCustom
+      Enabled: true
+      Flag Topic: /virtual_display_R
+      Image Topic: /camera/right/image_raw
+      Meters per pixel: 0.000250000012
+      Name: MeshDisplayCustom
+      Quad Frame: display_R
+      Value: true
+    - Class: rviz_textured_quads/MeshDisplayCustom
+      Enabled: true
+      Flag Topic: /virtual_display_L
+      Image Topic: /camera/left/image_raw
+      Meters per pixel: 0.000250000012
+      Name: MeshDisplayCustom
+      Quad Frame: display_L
+      Value: true
+  Enabled: true
+  Global Options:
+    Background Color: 48; 48; 90
+    Default Light: true
+    Fixed Frame: odom
+    Frame Rate: 30
+  Name: root
+  Tools:
+    - Class: rviz/Interact
+      Hide Inactive Objects: true
+    - Class: rviz/MoveCamera
+    - Class: rviz/Select
+    - Class: rviz/FocusCamera
+    - Class: rviz/Measure
+    - Class: rviz/SetInitialPose
+      Topic: /initialpose
+    - Class: rviz/SetGoal
+      Topic: /move_base_simple/goal
+    - Class: rviz/PublishPoint
+      Single click: true
+      Topic: /clicked_point
+  Value: true
+  Views:
+    Current:
+      Class: rviz/Orbit
+      Distance: 2.49327564
+      Enable Stereo Rendering:
+        Stereo Eye Separation: 0.0599999987
+        Stereo Focal Distance: 1
+        Swap Stereo Eyes: false
+        Value: false
+      Focal Point:
+        X: 0.169787601
+        Y: 0.023318693
+        Z: 0.65563035
+      Focal Shape Fixed Size: true
+      Focal Shape Size: 0.0500000007
+      Invert Z Axis: false
+      Name: Current View
+      Near Clip Distance: 0.00999999978
+      Pitch: 0.409796536
+      Target Frame: <Fixed Frame>
+      Value: Orbit (rviz)
+      Yaw: 3.10993528
+    Saved: ~
+Window Geometry:
+  Displays:
+    collapsed: false
+  Height: 1056
+  Hide Left Dock: false
+  Hide Right Dock: true
+  Image1:
+    collapsed: false
+  Image2:
+    collapsed: false
+  QMainWindow State: 000000ff00000000fd000000040000000000000171000003befc020000000efb0000001200530065006c0065006300740069006f006e00000001e10000009b0000006100fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c0061007900730100000000000001b8000000d700fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000000c00430061006d00650072006100000002d6000000160000000000000000fb0000001200430061006d0065007200610050007500620100000199000000920000000000000000fb0000001200430061006d006500720061005000750062010000022b000000c10000000000000000fb0000001200430061006d006500720061005000750062010000022b000000c10000000000000000fb0000000c0049006d006100670065003101000001be000000e20000001600fffffffb0000000c0049006d006100670065003201000002a6000001180000001600ffffff000000010000010f00000348fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000004100000348000000ad00fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000073f0000003efc0100000002fb0000000800540069006d006501000000000000073f0000030000fffffffb0000000800540069006d00650100000000000004500000000000000000000005c8000003be00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730000000000ffffffff0000000000000000
+  Selection:
+    collapsed: false
+  Time:
+    collapsed: false
+  Tool Properties:
+    collapsed: false
+  Views:
+    collapsed: true
+  Width: 1855
+  X: 65
+  Y: 24

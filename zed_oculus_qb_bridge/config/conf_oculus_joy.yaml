@@ -1,0 +1,22 @@
+left_arm:
+  name: "left_"
+  topic_track: "/LH_track"
+  topic_index: "/LH_ind"
+  pub_pose_des: "command1"
+  pub_hand: "/left_hand/hand_remap/hand_position"
+  pub_status: "calibration_status"
+  R_baseEgo2shoulder: [0.0, 0.0, 1.0, 0.0, 1.0, 0.0, -1.0, 0.0, 0.0]
+  topic_camera: "/camera/left/image_raw"
+  port: 2302
+
+right_arm:
+  name: "right_"
+  topic_track: "/RH_track"
+  topic_index: "/RH_ind"
+  pub_pose_des: "command1"
+  pub_hand: "/right_hand/hand_remap/hand_position"
+  pub_status: "calibration_status"
+  R_baseEgo2shoulder: [0.0, 0.0, 1.0, 0.0, -1.0, 0.0, 1.0, 0.0, 0.0]
+  topic_camera: "/camera/right/image_raw"
+  port: 2303
+

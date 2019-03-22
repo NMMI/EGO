@@ -1,0 +1,261 @@
+<?xml version="1.0"?>
+
+ 
+<robot name="my_robot">
+
+	<material name="red">
+	    <color rgba="255 0 0 1"/>
+	</material>
+
+
+	<link name="base_link">
+		<visual>
+			<!--<material name="red"/>-->
+			<geometry>
+				<!--<mesh filename="package://ego_description/meshes/Ego_body.stl" scale="0.001 0.001 0.001"/>-->
+				<box size="0.1 0.1 1.0"/>
+			</geometry>
+			<origin xyz="0 0 0.1" rpy="1.57075 -1.57075 0"/>
+		</visual>
+	</link>
+
+
+<!-- Ego Left Arm -->
+	<link name="link1_L">
+		<visual>
+			<geometry>
+				<box size="0.07 0.07 0.07"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+		</visual>
+	</link>
+
+	<link name="link2_L">
+		<visual>
+			<geometry>
+				<box size="0.07 0.07 0.07"/>
+			</geometry>
+			<origin xyz="0 0.090 0" rpy="0 0 0"/>
+		</visual>
+	</link>
+
+	<link name="link3_L">
+		<visual>
+			<geometry>
+				<box size="0.07 0.07 0.07"/>
+			</geometry>
+			<origin xyz="0 0.0 0" rpy="0 0 0"/>
+		</visual>
+	</link>
+
+	<link name="link4_L">
+		<visual>
+			<geometry>
+				<box size="0.07 0.07 0.07"/>
+			</geometry>
+			<origin xyz="0 0.090 0" rpy="0 0 0"/>
+		</visual>
+	</link>
+
+	<link name="hand_L">
+		<visual>
+			<geometry>
+				<box size="0.07 0.07 0.01"/>
+			</geometry>
+			<origin xyz="0 0.0 0" rpy="0 0 0"/>
+		</visual>
+	</link>
+
+	<joint name="L_joint_01" type="revolute">
+		    <axis xyz="0 0 1"/>
+		    <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5"/>
+		    <origin rpy="-1.3951 0.0 -0.1737" xyz="0.022 0.189 0.658"/>
+		    <parent link="base_link"/>
+		    <child link="link1_L"/>
+	</joint>
+
+	<joint name="L_joint_12" type="revolute">
+		    <axis xyz="1 0 0"/>
+		    <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5"/>
+		    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+		    <parent link="link1_L"/>
+		    <child link="link2_L"/>
+	</joint>
+
+	<joint name="L_joint_23" type="revolute">
+		    <axis xyz="0 1 0"/>
+		    <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5"/>
+		    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.168 0.0"/>
+		    <parent link="link2_L"/>
+		    <child link="link3_L"/>
+	</joint>
+
+	<joint name="L_joint_34" type="revolute">
+		    <axis xyz="0 0 1"/>
+		    <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5"/>
+		    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+		    <parent link="link3_L"/>
+		    <child link="link4_L"/>
+	</joint>
+
+	<joint name="L_joint_4h" type="revolute">
+		    <axis xyz="0 1 0"/>
+		    <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5"/>
+		    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.180 0.0"/>
+		    <parent link="link4_L"/>
+		    <child link="hand_L"/>
+	</joint>
+
+<!-- Ego Right Arm -->
+
+	<link name="link1_R">
+		<visual>
+			<geometry>
+				<box size="0.07 0.07 0.07"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+		</visual>
+	</link>
+
+	<link name="link2_R">
+		<visual>
+			<geometry>
+				<box size="0.07 0.07 0.07"/>
+			</geometry>
+			<origin xyz="0 -0.090 0" rpy="0 0 0"/>
+		</visual>
+	</link>
+
+	<link name="link3_R">
+		<visual>
+			<geometry>
+				<box size="0.07 0.07 0.07"/>
+			</geometry>
+			<origin xyz="0 0.0 0" rpy="0 0 0"/>
+		</visual>
+	</link>
+
+	<link name="link4_R">
+		<visual>
+			<geometry>
+				<box size="0.07 0.07 0.07"/>
+			</geometry>
+			<origin xyz="0 -0.090 0" rpy="0 0 0"/>
+		</visual>
+	</link>
+
+	<link name="hand_R">
+		<visual>
+			<geometry>
+				<box size="0.07 0.07 0.01"/>
+			</geometry>
+			<origin xyz="0 0.0 0" rpy="0 0 0"/>
+		</visual>
+	</link>
+
+	<joint name="R_joint_01" type="revolute">
+		    <axis xyz="0 0 1"/>
+		    <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5"/>
+		    <origin rpy="1.3951 0.0 0.1737" xyz="0.022 -0.189 0.658"/>
+		    <parent link="base_link"/>
+		    <child link="link1_R"/>
+	</joint>
+
+	<joint name="R_joint_12" type="revolute">
+		    <axis xyz="1 0 0"/>
+		    <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5"/>
+		    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+		    <parent link="link1_R"/>
+		    <child link="link2_R"/>
+	</joint>
+
+	<joint name="R_joint_23" type="revolute">
+		    <axis xyz="0 1 0"/>
+		    <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5"/>
+		    <origin rpy="0.0 0.0 0.0" xyz="0.0 -0.168 0.0"/>
+		    <parent link="link2_R"/>
+		    <child link="link3_R"/>
+	</joint>
+
+	<joint name="R_joint_34" type="revolute">
+		    <axis xyz="0 0 1"/>
+		    <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5"/>
+		    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+		    <parent link="link3_R"/>
+		    <child link="link4_R"/>
+	</joint>
+
+	<joint name="R_joint_4h" type="revolute">
+		    <axis xyz="0 1 0"/>
+		    <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5"/>
+		    <origin rpy="0.0 0.0 0.0" xyz="0.0 -0.180 0.0"/>
+		    <parent link="link4_R"/>
+		    <child link="hand_R"/>
+	</joint>
+
+<!-- Ego Left Wheel-->
+
+	<link name="wheel_L">
+		<visual>
+			<geometry>
+				<!--<cylinder  length="0.1" radius="0.13"/>-->
+				<mesh filename="package://ego_description/meshes/Ego_wheel.stl" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="1.57075 0 0"/>
+		</visual>
+	</link>
+
+	<joint name="L_joint_baseW" type="continuous">
+		    <axis xyz="0 1 0"/>
+		    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.248 0.0"/> 
+		    <parent link="base_link"/>
+		    <child link="wheel_L"/>
+	</joint>
+
+<!-- Ego Right Wheel-->
+
+	<link name="wheel_R">
+		<visual>
+			<geometry>
+				<!--<cylinder  length="0.1" radius="0.13"/>-->
+				<mesh filename="package://ego_description/meshes/Ego_wheel.stl" scale="0.001 0.001 0.001"/>
+			</geometry>
+			<origin xyz="0 0 0" rpy="1.57075 0 0"/>
+		</visual>
+	</link>
+
+	<joint name="R_joint_baseW" type="continuous">
+		    <axis xyz="0 1 0"/>
+		    <origin rpy="0.0 0.0 0.0" xyz="0.0 -0.248 0.0"/> 
+		    <parent link="base_link"/>
+		    <child link="wheel_R"/>
+	</joint>
+
+<!-- cubi -->
+<xacro:macro name="cube_shoulder" params="prefix" >
+    <link name="${prefix}_shoulder">
+        <visual>
+            <geometry>
+                <mesh filename="package://ego_description/meshes/qbmove_frame.stl" scale="0.001 0.001 0.001"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </visual>
+    </link>
+
+    <joint name="base_to_${prefix}_shoulder" type="continuous">
+        <parent link="base_link"/>
+        <child link="${prefix}_shoulder"/>
+        <origin xyz="0 1 1" />
+    </joint>
+    <!-- A bunch of stuff cut -->
+</xacro:macro>
+
+<xacro:cube_shoulder prefix="right"/>
+
+
+	
+
+
+
+
+</robot>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<launch>
+
+	<node name="qb_manager_node_left" pkg="qb_frank_controller" type="manager_node" respawn="false" output="screen">
+	    <param name="chain" value="left"/>
+	    <param name="port" value="/dev/ttyUSB2"/>
+	</node>
+
+</launch>

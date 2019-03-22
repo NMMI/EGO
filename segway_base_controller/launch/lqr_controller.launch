@@ -1,0 +1,17 @@
+<launch>
+
+<!-- Set your own configuration file or the default file will be set -->
+
+  <arg name="yamlFile" default="$(find qb_interface)/conf/config.yaml"/>
+
+  <rosparam command="load" file="$(arg yamlFile)"/>
+
+  <node name="qb_interface_node" pkg="qb_interface" type="qb_interface" args="0" output="screen" />
+
+  <!-- Odometry launched in display.launch () ego_description -->
+  <!-- <node pkg="segway_base_controller" name="odometry_publisher" type="odometry_publisher_node" output="screen"/>  -->
+  <node pkg="segway_base_controller" name="lqr" type="lqr_node" output="screen"/>
+  <node pkg="segway_base_controller" name="pitch_loop" type="pitch_loop_node" output="screen"/>
+
+
+</launch>

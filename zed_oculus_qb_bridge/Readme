@@ -1,0 +1,3 @@
+rosrun main-> solo oculus senza joy (utilizzare quando si utilizza il vecchio sistema con i myo)
+roslaunch joy_oculus_bridge oculus + joy
+rosrun main_todo oculus con zerotier

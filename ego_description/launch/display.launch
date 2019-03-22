@@ -1,0 +1,63 @@
+<launch>
+
+
+  <arg name="use_rviz" default="true" />
+
+  <!-- launch rviz with config/urdf_cam.rviz -->
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find ego_description)/config/urdf_cam.rviz" if="$(arg use_rviz)" />
+
+  <!-- <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" args="_use_gui:=true"/> -->
+  <param name="robot_description" command="$(find xacro)/xacro.py $(find ego_description)/urdf/ego_robot.urdf.xacro" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+
+  <node pkg="segway_base_controller" name="odometry_publisher" type="odometry_publisher_node" output="screen"/>
+
+
+  <!-- rviz_manager_node -->
+  <node name="rviz_manager_node" pkg="zed_oculus_qb_bridge" type="rviz_manager_node" output="screen"/>
+  <node pkg="tf" type="static_transform_publisher" name="static_display_R" args="0.0 0.0 0 0.0 0 0.0 joy_right display_R 100" />
+  <node pkg="tf" type="static_transform_publisher" name="static_display_L" args="0.0 0.0 0 0.0 0 0.0 joy_left display_L 100" />
+
+  
+
+
+  
+
+  
+
+
+  <!-- CAMERE VIRTUALI in RVIZ-->
+  <group ns="camera_L">
+  <node pkg="tf" type="static_transform_publisher" name="camera_broadcaster" args="0.0 0.03 0.0 -1.57 0.0 -1.57 stereo_link camera_L 10" />
+  <node name="camera_info" pkg="rostopic" type="rostopic"
+      args="pub camera_info sensor_msgs/CameraInfo
+     '{header: {seq: 0, stamp: {secs: 0, nsecs: 0}, frame_id: 'camera_L'},
+      height: 720, width: 1280, distortion_model: 'plumb_bob',
+      D: [-0.171543,0.0240596],
+      K: [700.045, 0.0, 668.567, 0.0, 700.045, 335.19, 0.0, 0.0, 1.0],
+      R: [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0],
+      P: [700.045, 0.0, 668.567, 0.0, 0.0, 700.045, 335.19, 0.0, 0.0, 0.0, 1.0, 0.0],
+      binning_x: 0, binning_y: 0,
+      roi: {x_offset: 0, y_offset: 0, height: 720, width: 1280, do_rectify: false}}' -r 2"
+      output="screen"/>
+  </group>
+
+
+
+  <group ns="camera_R">
+  <node pkg="tf" type="static_transform_publisher" name="camera_broadcaster" args="0.0 -0.03 0.0 -1.57 0.0 -1.57 stereo_link camera_R 10" />
+  <node name="camera_info" pkg="rostopic" type="rostopic"
+      args="pub camera_info sensor_msgs/CameraInfo
+     '{header: {seq: 0, stamp: {secs: 0, nsecs: 0}, frame_id: 'camera_R'},
+      height: 720, width: 1280, distortion_model: 'plumb_bob',
+      D: [-0.171543,0.0240596],
+      K: [700.045, 0.0, 668.567, 0.0, 700.045, 335.19, 0.0, 0.0, 1.0],
+      R: [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0],
+      P: [700.045, 0.0, 668.567, 0.0, 0.0, 700.045, 335.19, 0.0, 0.0, 0.0, 1.0, 0.0],
+      binning_x: 0, binning_y: 0,
+      roi: {x_offset: 0, y_offset: 0, height: 720, width: 1280, do_rectify: false}}' -r 2"
+      output="screen"/>
+  </group>
+
+
+</launch>

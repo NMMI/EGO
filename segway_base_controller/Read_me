@@ -1,0 +1,9 @@
+rostopic pub -1 /gain_PID geometry_msgs/Vector3 "x: 0.0 y: 0.0 z: 0.0"
+
+rostopic pub -1 /gain_PID_v geometry_msgs/Vector3 "x: 0.0
+y: 0.0
+z: 0.0" 
+
+rostopic pub -1 /gain_PID_w geometry_msgs/Vector3 "x: 0.0
+y: 0.0
+z: 0.0" 

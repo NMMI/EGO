@@ -1,0 +1,86 @@
+left_arm:
+  Q_1_link: "Q_Arm_L"
+  Q_2_link: "Q_For_L" 
+  Q_3_link: "Q_Palm_L"
+  pub_flag_disc: "Arm_flag_l_disc"
+  Imu_1_link: "/Arm_l_imu"
+  Imu_2_link: "/For_l_imu"
+  sub_k_1: "/elbow_l"
+  sub_k_2: "/wrist_l"
+  sub_k_3: "/palm_l"
+  sub_disc1_myo: "/Arm_l_disc"
+  sub_disc2_myo: "/For_l_disc"
+  ID: 1
+  q_old_1_w: 0 
+  q_old_1_vec: [0, 0.7071, 0.7071]    
+  q_old_2_w: 0 
+  q_old_2_vec: [0, 0.7071, 0.7071]    
+  q_old_3_w: 0 
+  q_old_3_vec: [0, 0.7071, 0.7071]
+  q0: "q0_L_"
+  q_Arm2For: "q_Arm2For_L_"
+  q_For2Palm: "q_For2Palm_L_"
+  Elbow_pos: "Elbow_L_pos"
+  Wrist_pos: "Wrist_L_pos"
+  Palm_pos: "Palm_L_pos"
+  controller_cmd1: "teleoperation_controller_mt/command1"
+  controller_cmd2: "teleoperation_controller_mt/command2"
+  controller_effort_cmd1: "command1"
+  controller_effort_cmd2: "command2"
+  # Rvs: [1, 0, 0, 0, 0, -1, 0, 1, 0]
+  # Pvs: [-0.32, -0.377, 0.39] #[-0.62, -0.377, 0.39] #
+  offset_elbow: [0, -0.15, 0]
+  q_pre: [0.7071, 0.7071, 0, 0]
+  q_nxt: [0, -0.7071, 0.7071,0]
+  V_R_sink: false
+  simulation: false
+  Snmf: [0,0.0011,0,0,0,0.0012,0,0.0078,0,0.0032,0.0018,0.0183,0,0,0,0,0,0.0099,0,0,0,0.0082,0,0]
+  For_emg: "/For_l_emg"
+  Arm_emg: "/Arm_l_emg"
+  Hand_mov: "/left_hand/hand_remap/hand_position"
+  Stiff: "teleoperation_controller_mt_effort/stiffness_scale"
+
+right_arm:
+  Q_1_link: "Q_Arm_R"
+  Q_2_link: "Q_For_R" 
+  Q_3_link: "Q_Palm_R"
+  pub_flag_disc: "Arm_flag_r_disc"
+  Imu_1_link: "/Arm_r_imu"
+  Imu_2_link: "/For_r_imu"
+  sub_k_1: "/elbow_r"
+  sub_k_2: "/wrist_r"
+  sub_k_3: "/palm_r"
+  sub_disc1_myo: "/Arm_r_disc"
+  sub_disc2_myo: "/For_r_disc"
+  ID: 0
+  q_old_1_w: 0 
+  q_old_1_vec: [0, 0.7071, -0.7071]    
+  q_old_2_w: 0 
+  q_old_2_vec: [0, 0.7071, -0.7071]    
+  q_old_3_w: 0 
+  q_old_3_vec: [0, 0.7071, -0.7071]
+  q0: "q0_R_"
+  q_Arm2For: "q_Arm2For_R_"
+  q_For2Palm: "q_For2Palm_R_"
+  Elbow_pos: "Elbow_R_pos"
+  Wrist_pos: "Wrist_R_pos"
+  Palm_pos: "Palm_R_pos"
+  controller_cmd1: "teleoperation_controller_mt/command1"
+  controller_cmd2: "teleoperation_controller_mt/command2"
+  controller_effort_cmd1: "command1"
+  controller_effort_cmd2: "command2"
+  # Rvs: [1, 0, 0, 0, 0, 1, 0, -1, 0]
+  # Pvs: [0.0244, -0.0226, 0.1895]  #[-0.32, 0.377, 0.39] #[-0.62, 0.377, 0.39]
+  offset_elbow: [0, 0.15, 0]
+  q_pre: [0.7071, -0.7071, 0, 0]
+  q_nxt: [0, 0.7071, -0.7071,0]
+  V_R_sink: false
+  simulation: false
+  Snmf: [0, 0, 0, 0.0088,0,0,0,0,0,0,0.0011,0,0,0,0.0082,0,0.0011,0.0097,0.0017,0.0034,0.0014,0.0021,0.0018,0]
+  For_emg: "/For_r_emg"
+  Arm_emg: "/Arm_r_emg"
+  Hand_mov: "/right_hand/hand_remap/hand_position"
+  Stiff: "teleoperation_controller_mt_effort/stiffness_scale"
+
+
+

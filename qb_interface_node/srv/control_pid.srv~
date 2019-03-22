@@ -1,0 +1,8 @@
+geometry_msgs/Point A
+geometry_msgs/Point B
+---
+float64 d1
+float64 d2
+float64 d3
+float64 d4
+float64 angle

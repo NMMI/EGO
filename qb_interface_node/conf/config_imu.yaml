@@ -1,0 +1,11 @@
+port: '/dev/ttyUSB2' # communication port
+eq_preset: false # [Equilibrium/Preset] -> True , [P1/P2/PL] -> False
+hand_perc: false # [Hand command in percentual] -> True , [Hand command in TICK] -> False
+current: false # [Activate current reader] -> True, [Deactivate current reader] -> False
+unit: 'RAD' # Unit of measurement, ['DEG', 'RAD', 'TICK']
+step_time_imu: 0.0025 #Step time for IMU boards
+hand_step_div: 20 #Step time divider for the hand
+baudrate: 2000000 # BaudRate [200000, 460800]
+IDcubes: [] # ID cubes in chain
+IDhands: [] # ID hands in chain
+IDimuboards: [34] # ID imu boards in chainIDimuboards: [34] 

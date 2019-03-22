@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<launch>
+
+	<!-- qb_interface IMU -->
+
+	<arg name="yamlFile" default="$(find qb_interface)/conf/config_imu.yaml"/>
+
+	<rosparam command="load" file="$(arg yamlFile)"/>
+
+	<node name="qb_interface_imu_node" pkg="qb_interface" type="qb_interface_imu" args="0" output="screen" />
+
+
+
+	<node name="Sensor" pkg="segway_base_controller" type="Sensor_node" args="0" output="screen" />
+
+
+
+</launch>
