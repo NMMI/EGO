@@ -1,3 +1,6 @@
 [submodule "zed_cpu_ros"]
 	path = zed_cpu_ros
 	url = https://github.com/CentroEPiaggio/zed_cpu_ros.git
+[submodule "external/zed_cpu_ros"]
+	path = external/zed_cpu_ros
+	url = https://github.com/CentroEPiaggio/zed_cpu_ros.git
