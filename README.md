@@ -28,6 +28,8 @@ The command to launch the bridge with the pilot station:
 
 `roslaunch zed_oculus_qb_bridge oculus_joy_bridge.launch`
 
+Compile and run Zed_Oculus (visual studio 2015)
+
 ## Istitutions
 
 `Istituto Italiano di Tecnologia, via Morego, 30, 16163 Genova, Italia`
