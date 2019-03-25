@@ -27,3 +27,8 @@ The command to launch the camera:
 The command to launch the bridge with the pilot station:
 
 `roslaunch zed_oculus_qb_bridge oculus_joy_bridge.launch`
+
+## Istitutions
+
+`Istituto Italiano di Tecnologia, via Morego, 30, 16163 Genova, Italia`
+`Centro di Ricerca E. Piaggio e Dipartimento di Ingegneria dell’Informazione, Universita di Pisa, Pisa, Italia`
