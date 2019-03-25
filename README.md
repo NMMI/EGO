@@ -31,4 +31,5 @@ The command to launch the bridge with the pilot station:
 ## Istitutions
 
 `Istituto Italiano di Tecnologia, via Morego, 30, 16163 Genova, Italia`
+
 `Centro di Ricerca E. Piaggio e Dipartimento di Ingegneria dell’Informazione, Universita di Pisa, Pisa, Italia`
