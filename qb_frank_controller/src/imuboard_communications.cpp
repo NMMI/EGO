@@ -1,4 +1,3 @@
-
 // Copyright (c) 2016, Mattia Poggiani.
 // All rights reserved.
 //
@@ -22,19 +21,6 @@
 // CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
-
-/**
- *  \file       imuboard_communications.cpp
- *
- *  \brief      Library of functions for serial port communication with a
- *              IMU board
- *
- *  \details
- *
- *  Check the \ref imuboard_communications.h "imuboard_communications.h" file
- *  for a complete description of the public functions implemented in
- *  imuboard_communications.cpp.
-**/
 
 //=================================================================     includes
 

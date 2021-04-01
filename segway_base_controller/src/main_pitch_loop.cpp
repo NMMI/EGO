@@ -1,3 +1,45 @@
+/***
+ *  Software License Agreement: BSD 3-Clause License
+ *
+ * Copyright (c) 2019, NMMI
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * Redistributions of source code must retain the above copyright notice, this
+ * list of conditions and the following disclaimer.
+ *
+ * Redistributions in binary form must reproduce the above copyright notice,
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
+ *
+ * Neither the name of the copyright holder nor the names of its
+ * contributors may be used to endorse or promote products derived from
+ * this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+
+// ----------------------------------------------------------------------------
+
+/**
+ * \file      main_pitch_loop.cpp
+ *
+ * \author       _Centro di Ricerca "E.Piaggio"_
+ * \author       _Istituto Italiano di Tecnologia, Soft Robotics for Human Cooperation and Rehabilitation Lab_
+**/
+// ----------------------------------------------------------------------------
+
 #include <ros/ros.h>
 #include <ros/rate.h>
 #include <eigen3/Eigen/Eigen>
@@ -302,30 +344,29 @@ int main(int argc, char **argv)
     CM5_L << CM_L_links(4,0), CM_L_links(4,1), CM_L_links(4,2), 1;
 
   	
-  	CM1_R = T_R * R_base_torso * R_R_torso_cube * CM1_R;
-  	CM2_R = T_R * R_base_torso * R_R_torso_cube * CM2_R;
-  	CM3_R = T_R * R_base_torso * R_R_torso_cube * CM3_R;
-  	CM4_R = T_R * R_base_torso * R_R_torso_cube * CM4_R;
+    CM1_R = T_R * R_base_torso * R_R_torso_cube * CM1_R;
+    CM2_R = T_R * R_base_torso * R_R_torso_cube * CM2_R;
+    CM3_R = T_R * R_base_torso * R_R_torso_cube * CM3_R;
+    CM4_R = T_R * R_base_torso * R_R_torso_cube * CM4_R;
     CM5_R = T_R * R_base_torso * R_R_torso_cube * CM5_R;
 
-  	CM1_L = T_L * R_base_torso * R_L_torso_cube * R_z_pi * CM1_L;
-  	CM2_L = T_L * R_base_torso * R_L_torso_cube * R_z_pi * CM2_L;
-  	CM3_L = T_L * R_base_torso * R_L_torso_cube * R_z_pi * CM3_L;
-  	CM4_L = T_L * R_base_torso * R_L_torso_cube * R_z_pi * CM4_L;
+    CM1_L = T_L * R_base_torso * R_L_torso_cube * R_z_pi * CM1_L;
+    CM2_L = T_L * R_base_torso * R_L_torso_cube * R_z_pi * CM2_L;
+    CM3_L = T_L * R_base_torso * R_L_torso_cube * R_z_pi * CM3_L;
+    CM4_L = T_L * R_base_torso * R_L_torso_cube * R_z_pi * CM4_L;
     CM5_L = T_L * R_base_torso * R_L_torso_cube * R_z_pi * CM5_L;
 
 
 
-  	CM = ((CM_torso * 12.8) + (CM1_R * 0.6) + (CM2_R * 0.64) + (CM3_R * 0.59) + (CM4_R * 0.35) + (CM5_R * 0.38)  + (CM1_L * 0.6) + (CM2_L * 0.64) + (CM3_L * 0.59) + (CM4_L * 0.35) + (CM5_L * 0.38))/(12.8 + ((0.6 + 0.64 + 0.59 + 0.35 + 0.38)*2));
-    offset_phi_pub.data = (vel_des - vel_curr) * kp + (pos_des - pos_curr) * ki;
-  	offset_phi_pub.data = atan2(-CM(2), CM(0));
+    CM = ((CM_torso * 12.8) + (CM1_R * 0.6) + (CM2_R * 0.64) + (CM3_R * 0.59) + (CM4_R * 0.35) + (CM5_R * 0.38)  + (CM1_L * 0.6) + (CM2_L * 0.64) + (CM3_L * 0.59) + (CM4_L * 0.35) + (CM5_L * 0.38))/(12.8 + ((0.6 + 0.64 + 0.59 + 0.35 + 0.38)*2));
+    offset_phi_pub.data = atan2(-CM(2), CM(0));
 
-  	CM_Vect.x = CM(0);
-  	CM_Vect.y = CM(1);
-  	CM_Vect.z = CM(2);
+    CM_Vect.x = CM(0);
+    CM_Vect.y = CM(1);
+    CM_Vect.z = CM(2);
 
-  	pub_CM.publish(CM_Vect);
-  	pub_offset_phi.publish(offset_phi_pub);
+    pub_CM.publish(CM_Vect);
+    pub_offset_phi.publish(offset_phi_pub);
 
     ros::spinOnce();
     r.sleep();

@@ -1,4 +1,3 @@
-
 // Copyright (c) 2012, qbrobotics.
 // All rights reserved.
 //
@@ -23,20 +22,6 @@
 // ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // POSSIBILITY OF SUCH DAMAGE.
 
-/**
- *  \file       qbmove_communications.cpp
- *
- *  \brief      Library of functions for serial port communication with a
- *              qbMove or a qbHand
- *
- *  \details
- *
- *  Check the \ref qbmove_communications.h "qbmove_communications.h" file
- *  for a complete description of the public functions implemented in
- *  qbmove_communications.cpp.
-**/
-
-//=================================================================     includes
 
 #include <stdio.h>   /* Standard input/output definitions */
 #include <string.h>  /* String function definitions */

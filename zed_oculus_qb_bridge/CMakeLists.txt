@@ -17,10 +17,6 @@ include_directories(${catkin_INCLUDE_DIRS} ${orocos_kdl_INCLUDE_DIRS} ${OpenCV_I
 	)
 
 
-add_executable(zed_bridge_node src/main_zed_bridge.cpp)
-add_dependencies(zed_bridge_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(zed_bridge_node ${catkin_LIBRARIES} ${orocos_kdl_LIBRARIES} ${OpenCV_LIBRARIES})
-
 add_executable(Joy_oculus_bridge_node src/main_Joy_bridge.cpp src/Joy_oculus_bridge.cpp )
 add_dependencies(Joy_oculus_bridge_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(Joy_oculus_bridge_node ${catkin_LIBRARIES})
@@ -29,10 +25,7 @@ add_executable(head_bridge_node src/main_head_bridge.cpp)
 add_dependencies(head_bridge_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(head_bridge_node ${catkin_LIBRARIES} ${orocos_kdl_LIBRARIES} ${OpenCV_LIBRARIES})
 
-add_executable(rviz_zed_oculus_interface src/rviz_zed_oculus_interface.cpp src/udp_interface/udp_client.cpp)
-add_dependencies(rviz_zed_oculus_interface ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(rviz_zed_oculus_interface ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+# add_executable(rviz_zed_oculus_interface src/rviz_zed_oculus_interface.cpp src/udp_interface/udp_client.cpp)
+# add_dependencies(rviz_zed_oculus_interface ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+# target_link_libraries(rviz_zed_oculus_interface ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 
-add_executable(rviz_manager_node src/main_rviz_manager.cpp)
-add_dependencies(rviz_manager_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(rviz_manager_node ${catkin_LIBRARIES} ${orocos_kdl_LIBRARIES} ${OpenCV_LIBRARIES})

@@ -1,340 +1,557 @@
+<!-- 
+ *  Software License Agreement: BSD 3-Clause License
+ *
+ * Copyright (c) 2019, NMMI
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * Redistributions of source code must retain the above copyright notice, this
+ * list of conditions and the following disclaimer.
+ *
+ * Redistributions in binary form must reproduce the above copyright notice,
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
+ *
+ * Neither the name of the copyright holder nor the names of its
+ * contributors may be used to endorse or promote products derived from
+ * this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+ * FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ * DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ * SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ * OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * \file      ego_robot.urdf.xacro
+ *
+ * \author       _Centro di Ricerca "E.Piaggio"_
+ * \author       _Istituto Italiano di Tecnologia, Soft Robotics for Human Cooperation and Rehabilitation Lab_
+ *
+-->
+
 <?xml version="1.0"?>
 
  
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="my_robot">
+  
+<!--   <xacro:include filename="$(find soft_hand_description)/model/soft_hand.urdf.xacro"/> -->
+  
+  <material name="qbmove/flange">
+    <color rgba="0.0 0.5 0.8 1.0"/>
+  </material>
 
-	<xacro:include filename="$(find soft_hand_description)/model/soft_hand.urdf.xacro"/>
+  <material name="qbmove/cube">
+    <color rgba="0.35 0.35 0.35 1.0"/>
+  </material>
 
-	<material name="red">
-	    <color rgba="255 0 0 1"/>
-	</material>
+  <material name="qbmove/shaft">
+    <color rgba="0.8 0.8 0.8 1.0"/>
+  </material>
 
-	<material name="qbmove/flange">
-		<color rgba="0.0 0.5 0.8 1.0"/>
-	</material>
+  <material name="qbmove/default">
+    <color rgba="0.35 0.35 0.35 1.0"/>
+  </material>
+  
+  <material name="SoftBlue">
+    <color rgba="0.0 0.0 0.8 0.9"/>
+  </material>
 
-	<material name="qbmove/cube">
-		<color rgba="0.35 0.35 0.35 1.0"/>
-	</material>
+  <material name="SoftLightBlue">
+    <color rgba="0.0 0.4 1.0 1.0"/>
+  </material>
 
-	<material name="qbmove/shaft">
-		<color rgba="0.8 0.8 0.8 1.0"/>
-	</material>
+  <material name="wheel">
+    <color rgba="0.50 0.50 0.50 1.0"/>
+  </material>
+  
+  <link name="base_link">
+    <inertial>
+      <origin xyz="-4.9e-3 0 0.2871" rpy="0 0 0"/>
+      <mass value="13.32"/>
+      <inertia ixx="1.41"  ixy="3.66e-4"  ixz="2.21e-2" 
+			  iyy="1.29" 	    iyz="-9.05e-4" 
+					  izz="1.7e-1" />
+    </inertial>
+    <visual>
+      <material name="SoftLightBlue"/>
+      <geometry>
+	  <mesh filename="package://ego_description/meshes/Ego_body.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin xyz="0 0 0.1" rpy="1.57075 -1.57075 0"/>
+    </visual>
+    <collision>
+      <material name="SoftLightBlue"/>
+      <geometry>
+	<mesh filename="package://ego_description/meshes/Ego_body.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin xyz="0 0 0.1" rpy="1.57075 -1.57075 0"/>
+    </collision>
+  </link>
 
-	<material name="qbmove/default">
-		<color rgba="0.35 0.35 0.35 1.0"/>
-	</material>
+  <link name="neck">
+    <visual>
+      <material name="qbmove/flange"/>
+      <geometry>
+	<mesh filename="package://ego_description/meshes/qb_c_flange.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="3.14 0 -1.57075"/>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1e-7"/>
+      <inertia ixx="1e-8"  ixy="0"  	    ixz="0" 
+			      iyy="1e-8" 	    iyz="0" 
+						  izz="1e-8" />
+    </inertial>
+    <collision>
+      <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+      <geometry>
+	      <box size="0.07 0.07 0.07"/>
+      </geometry>
+    </collision>
+  </link>
 
-	<material name="wheel">
-		<color rgba="0.50 0.50 0.50 1.0"/>
-	</material>
+  <joint name="base_to_neck" type="fixed">
+    <origin rpy="0.0 0.0 0.0" xyz="0 0 0.74"/> 
+    <parent link="base_link"/>
+    <child link="neck"/>
+  </joint>
 
+  <link name="head">
+    <visual>
+      <material name="qbmove/cube"/>
+      <geometry>
+	      <mesh filename="package://ego_description/meshes/Ego_head.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="1.57075 -1.57075 0"/>
+    </visual>
+    <inertial>
+	    <origin xyz="0 0 0" rpy="0 0 0"/>
+	    <mass value="1e-7"/>
+	    <inertia ixx="1e-8"  ixy="0"  	    ixz="0" 
+				    iyy="1e-8" 	    iyz="0" 
+							izz="1e-8" />
+    </inertial>
+    <collision>
+      <origin rpy="0.0 0.0 0" xyz="0.035 0.0 0.02"/>
+      <geometry>
+	<sphere radius="0.075"/>
+      </geometry>
+    </collision>
+  </link>
 
+  <joint name="neck_to_head" type="fixed">
+    <origin rpy="0.0 -0.7 0.0" xyz="0 0 0.058"/> 
+    <parent link="neck"/>
+    <child link="head"/>
+  </joint>
 
-	<link name="base_link">
-		<visual>
-			<!--<material name="red"/>-->
-			<geometry>
-				<!--mesh filename="package://ego_description/meshes/Ego_body.stl" scale="0.001 0.001 0.001"/-->
-				<box size="0.1 0.1 0.1"/>
-			</geometry>
-			<origin xyz="0 0 0.1" rpy="1.57075 -1.57075 0"/>
-		</visual>
-	</link>
+  <xacro:macro name="cube_shoulder" params="prefix reflect" >
+    <link name="${prefix}_shoulder_flange">
+	<visual>
+	  <material name="qbmove/flange"/>
+	  <geometry>
+	      <mesh filename="package://ego_description/meshes/qb_flat_flange.stl" scale="0.001 0.001 0.001"/>
+	  </geometry>
+	    <origin xyz="0 0 -0.033" rpy="0 0 0"/>
+	</visual> 
+	<inertial>
+	  <origin xyz="0 0 0" rpy="0 0 0"/>
+	  <mass value="1e-7"/>
+	  <inertia ixx="1e-8"  ixy="0"  	    ixz="0" 
+				  iyy="1e-8" 	    iyz="0" 
+						      izz="1e-8" />
+	</inertial>
+    </link>
+   
+    <link name="${prefix}_shoulder_cube">
+      <visual>
+	<material name="qbmove/cube"/>
+	<geometry>
+	    <mesh filename="package://ego_description/meshes/qbmove_frame.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+	<origin xyz="-0.033 0 0" rpy="0 1.57075 0"/>
+      </visual>
+      <inertial>
+	<origin xyz="${reflect*-1.336e-3} 0 -3.15e-3" rpy="0 0 0"/>
+	<mass value="0.601"/>
+	<inertia ixx="2.24e-4"  ixy="0"  	    ixz="0" 
+				iyy="2.43e-4" 	    iyz="0" 
+						    izz="1.98e-4" />
+      </inertial>
+      <collision>
+	<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	<geometry>
+		<box size="0.07 0.07 0.07"/>
+	</geometry>
+      </collision>
+    </link>
+    
+    <joint name="base_to_${prefix}_shoulder" type="revolute">
+      <axis xyz="0 0 1"/>
+      <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5"/>
+      <origin xyz="0.025 ${reflect*-0.184} ${0.658+0.063}" rpy="${reflect*1.3951} 0.0 ${reflect*0.1737}"/>
+      <parent link="base_link"/>
+      <child link="${prefix}_shoulder_flange"/>
+    </joint>
 
-	<link name="neck">
-		<visual>
-			<material name="qbmove/flange"/>
-			<geometry>
-				<mesh filename="package://ego_description/meshes/qb_c_flange.stl" scale="0.001 0.001 0.001"/>
-			</geometry>
-			<origin xyz="0 0 0" rpy="3.14 0 -1.57075"/>
-		</visual>
-	</link>
+    <joint name="${prefix}_shoulder_flange_to_cube" type="fixed">
+	<parent link="${prefix}_shoulder_flange"/>
+	<child link="${prefix}_shoulder_cube"/>
+    </joint>
+  </xacro:macro>
 
-	<joint name="base_to_neck" type="continuous">
-		    <axis xyz="0 0 1"/>
-		    <origin rpy="0.0 0.0 0.0" xyz="0 0 0.74"/> 
-		    <parent link="base_link"/>
-		    <child link="neck"/>
-	</joint>
+  <xacro:macro name="cube_arm" params="prefix reflect" >
+    <link name="${prefix}_arm_flange">
+      <visual>
+	<material name="qbmove/flange"/>
+	<geometry>
+	    <mesh filename="package://ego_description/meshes/qb_c_flange.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+	<origin xyz="0 ${reflect*(0.033-0.09)} 0" rpy="${reflect*1.57075} 0 0"/>
+      </visual>
+      <inertial>
+	<origin xyz="0 0 0" rpy="0 0 0"/>
+	<mass value="1e-7"/>
+	<inertia ixx="1e-8"  ixy="0"  	    ixz="0" 
+			      iyy="1e-8" 	    iyz="0" 
+						izz="1e-8" />
+      </inertial>
+    </link>
 
-	<link name="head">
-		<visual>
-			<material name="qbmove/cube"/>
-			<geometry>
-				<mesh filename="package://ego_description/meshes/Ego_head.stl" scale="0.001 0.001 0.001"/>
-			</geometry>
-			<origin xyz="0 0 0" rpy="1.57075 -1.57075 0"/>
-		</visual>
-	</link>
+    <link name="${prefix}_arm_cube">
+      <visual>
+	  <material name="qbmove/cube"/>
+	  <geometry>
+	      <mesh filename="package://ego_description/meshes/qbmove_frame.stl" scale="0.001 0.001 0.001"/>
+	  </geometry>
+	  <origin xyz="0 ${reflect*(0.033-0.09)} 0" rpy="${reflect*1.57075} 3.14 0"/>
+      </visual>
+      <visual>
+	<geometry>
+	    <mesh filename="package://ego_description/meshes/qbmove_pulley.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+	<origin xyz="0.025 ${reflect*(0.09-0.09)} 0" rpy="0 0 -1.57075"/>
+      </visual>
+      <inertial>
+	<origin xyz="9.25e-4  ${reflect*-0.08266} 0 " rpy="0 0 0"/>
+	<mass value="0.643"/>
+	<inertia ixx="5.44e-4"  ixy="0"  	    ixz="0" 
+				iyy="2.42e-4" 	    iyz="0" 
+						    izz="6.04e-4" />
+      </inertial>
+      <collision>
+	  <origin rpy="0.0 0 0.0" xyz="0.0 ${reflect*-0.09} 0.0"/>
+	  <geometry>
+	      <box size="0.07 0.07 0.07"/>
+	  </geometry>
+      </collision>
+    </link>
 
-	<joint name="neck_to_head" type="continuous">
-		    <axis xyz="0 1 0"/>
-		    <origin rpy="0.0 0.0 0.0" xyz="0 0 0.058"/> 
-		    <parent link="neck"/>
-		    <child link="head"/>
-	</joint>
+    <joint name="shoulder_to_${prefix}_arm" type="revolute">
+	<axis xyz="1 0 0"/>
+	<xacro:if value="${prefix == 'left'}">
+	  <limit effort="5.0" lower="-0.174" upper="3.14" velocity="0.5"/>
+	</xacro:if>
+	<xacro:unless value="${prefix == 'left'}">
+	  <limit effort="5.0" lower="-3.14" upper="0.174" velocity="0.5"/>
+	</xacro:unless> 
+	<origin xyz="0.0 0 0" rpy="0 0.0 0"/>
+	<parent link="${prefix}_shoulder_cube"/>
+	<child link="${prefix}_arm_flange"/>
+    </joint>
 
-	<!-- cubi -->
-	<xacro:macro name="cube_shoulder" params="prefix reflect" >
-	    <link name="${prefix}_shoulder_flange">
-	        <visual>
-	        	<material name="qbmove/flange"/>
-	            <geometry>
-	                <mesh filename="package://ego_description/meshes/qb_flat_flange.stl" scale="0.001 0.001 0.001"/>
-	            </geometry>
-	            <origin xyz="0 0 -0.033" rpy="0 0 0"/>
-	        </visual>
-	    </link>
+    <joint name="${prefix}_arm_flange_to_cube" type="fixed">
+	<parent link="${prefix}_arm_flange"/>
+	<child link="${prefix}_arm_cube"/>
+    </joint>
+  </xacro:macro>
 
-	    <link name="${prefix}_shoulder_cube">
-	        <visual>
-	        	<material name="qbmove/cube"/>
-	            <geometry>
-	                <mesh filename="package://ego_description/meshes/qbmove_frame.stl" scale="0.001 0.001 0.001"/>
-	            </geometry>
-	            <origin xyz="-0.033 0 0" rpy="0 1.57075 0"/>
-	        </visual>
-	    </link>
+  <xacro:macro name="cube_elbow" params="prefix reflect" >
+    <link name="${prefix}_elbow_flange">
+      <visual>
+	<material name="qbmove/flange"/>
+	<geometry>
+	    <mesh filename="package://ego_description/meshes/qb_flat_flange.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+	<origin xyz="0 ${reflect*0.033} 0" rpy="${reflect*1.57075} 1.57075 0"/>
+      </visual>
+      <inertial>
+	<origin xyz="0 0 0" rpy="0 0 0"/>
+	<mass value="1e-7"/>
+	<inertia ixx="1e-8"  ixy="0"  	    ixz="0" 
+				iyy="1e-8" 	    iyz="0" 
+						    izz="1e-8" />
+      </inertial>
+    </link>
 
-	    <joint name="base_to_${prefix}_shoulder" type="revolute">
-	    	<axis xyz="0 0 1"/>
-			<limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5"/>
-			<origin xyz="0.025 ${reflect*-0.184} ${0.658+0.063}" rpy="${reflect*1.3951} 0.0 ${reflect*0.1737}"/>
-	        <parent link="base_link"/>
-	        <child link="${prefix}_shoulder_flange"/>
-	    </joint>
+    <link name="${prefix}_elbow_cube">
+      <visual>
+	<material name="qbmove/cube"/>
+	<geometry>
+	    <mesh filename="package://ego_description/meshes/qbmove_frame.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+	<origin xyz="0 0 -0.033" rpy="0 0 3.14"/>
+      </visual>
 
-	    <joint name="${prefix}_shoulder_flange_to_cube" type="fixed">
-	        <parent link="${prefix}_shoulder_flange"/>
-	        <child link="${prefix}_shoulder_cube"/>
-	    </joint>
-	</xacro:macro>
-
-	<xacro:macro name="cube_arm" params="prefix reflect" >
-	    <link name="${prefix}_arm_flage">
-	        <visual>
-	        	<material name="qbmove/flange"/>
-	            <geometry>
-	                <mesh filename="package://ego_description/meshes/qb_c_flange.stl" scale="0.001 0.001 0.001"/>
-	            </geometry>
-	            <origin xyz="0 ${reflect*(0.033-0.09)} 0" rpy="${reflect*1.57075} 0 0"/>
-	        </visual>
-	    </link>
-
-	    <link name="${prefix}_arm_cube">
-	        <visual>
-	        	<material name="qbmove/cube"/>
-	            <geometry>
-	                <mesh filename="package://ego_description/meshes/qbmove_frame.stl" scale="0.001 0.001 0.001"/>
-	            </geometry>
-	            <origin xyz="0 ${reflect*(0.033-0.09)} 0" rpy="${reflect*1.57075} 3.14 0"/>
-	        </visual>
-	        <visual>
-	            <geometry>
-	                <mesh filename="package://ego_description/meshes/qbmove_pulley.stl" scale="0.001 0.001 0.001"/>
-	            </geometry>
-	            <origin xyz="0.025 ${reflect*(0.09-0.09)} 0" rpy="0 0 -1.57075"/>
-	        </visual>
-	    </link>
-
-	    <joint name="shoulder_to_${prefix}_arm" type="revolute">
-	    	<axis xyz="1 0 0"/>
-			<limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5"/>
-			<origin xyz="0.0 0 0" rpy="0 0.0 0"/>
-	        <parent link="${prefix}_shoulder_cube"/>
-	        <child link="${prefix}_arm_flage"/>
-	    </joint>
-
-	    <joint name="${prefix}_arm_flage_to_cube" type="fixed">
-	        <parent link="${prefix}_arm_flage"/>
-	        <child link="${prefix}_arm_cube"/>
-	    </joint>
-	</xacro:macro>
-
-	<xacro:macro name="cube_elbow" params="prefix reflect" >
-	    <link name="${prefix}_elbow_flange">
-	        <visual>
-	        	<material name="qbmove/flange"/>
-	            <geometry>
-	                <mesh filename="package://ego_description/meshes/qb_flat_flange.stl" scale="0.001 0.001 0.001"/>
-	            </geometry>
-	            <origin xyz="0 ${reflect*0.033} 0" rpy="${reflect*1.57075} 1.57075 0"/>
-	        </visual>
-	    </link>
-
-	    <link name="${prefix}_elbow_cube">
-	        <visual>
-	        	<material name="qbmove/cube"/>
-	            <geometry>
-	                <mesh filename="package://ego_description/meshes/qbmove_frame.stl" scale="0.001 0.001 0.001"/>
-	            </geometry>
-	            <origin xyz="0 0 -0.033" rpy="0 0 3.14"/>
-	        </visual>
-
-	        <visual>
-	            <geometry>
-	                <mesh filename="package://ego_description/meshes/qbmove_pulley.stl" scale="0.001 0.001 0.001"/>
-	            </geometry>
-	            <origin xyz="0 ${reflect*0.053} 0" rpy="0 0 ${(reflect+1)*(3.14/2)}"/>
-	        </visual>
-	    </link>
-
-	    <joint name="arm_to_${prefix}_elbow" type="revolute">
-	    	<axis xyz="0 1 0"/>
-			<limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5"/>
-			<origin rpy="0.0 0.0 0.0" xyz="0.0 ${reflect*-0.168} 0.0"/>
-	        <parent link="${prefix}_arm_cube"/>
-	        <child link="${prefix}_elbow_flange"/>
-	    </joint>
-
-	    <joint name="${prefix}_elbow_flage_to_cube" type="fixed">
-	        <parent link="${prefix}_elbow_flange"/>
-	        <child link="${prefix}_elbow_cube"/>
-	    </joint>
-	</xacro:macro>
-
-	<xacro:macro name="cube_forearm" params="prefix reflect" >
-	    <link name="${prefix}_forearm_flange">
-	        <visual>
-	        	<material name="qbmove/flange"/>
-	            <geometry>
-	                <mesh filename="package://ego_description/meshes/qb_c_flange.stl" scale="0.001 0.001 0.001"/>
-	            </geometry>
-	            <origin xyz="0 ${reflect*(0.033-0.09)} 0" rpy="${reflect*1.57075} -1.57075 0"/>
-	        </visual>
-	    </link>
-
-	    <link name="${prefix}_forearm_cube">
-	        <visual>
-	        	<material name="qbmove/cube"/>
-	            <geometry>
-	                <mesh filename="package://ego_description/meshes/qbmove_frame.stl" scale="0.001 0.001 0.001"/>
-	            </geometry>
-	            <origin xyz="0 ${reflect*(0.033-0.09)} 0" rpy="${reflect*1.57075} 3.14 0"/>
-	        </visual>
-
-	        <visual>
-	            <geometry>
-	                <mesh filename="package://ego_description/meshes/qbmove_pulley.stl" scale="0.001 0.001 0.001"/>
-	            </geometry>
-	            <origin xyz="0 0 0.025" rpy="1.57075 0 0"/>
-	        </visual>
-	    </link>
-
-	    <joint name="elbow_to_${prefix}_forearm" type="revolute">
-	    	<axis xyz="0 0 1"/>
-			<limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5"/>
-			<origin xyz="0.0 0 0" rpy="0 0.0 0"/>
-	        <parent link="${prefix}_elbow_cube"/>
-	        <child link="${prefix}_forearm_flange"/>
-	    </joint>
-
-	    <joint name="${prefix}_forearm_flange_to_cube" type="fixed">
-	        <parent link="${prefix}_forearm_flange"/>
-	        <child link="${prefix}_forearm_cube"/>
-	    </joint>
-	</xacro:macro>
-
-	<xacro:macro name="EE" params="prefix reflect" >
-	    <link name="${prefix}_EE_flange">
-	        <visual>
-	        	<material name="qbmove/flange"/>
-	            <geometry>
-	                <mesh filename="package://ego_description/meshes/qb_flat_flange.stl" scale="0.001 0.001 0.001"/>
-	            </geometry>
-	            <origin xyz="0 ${reflect*0.033} 0" rpy="${reflect*1.57075} 1.57075 0"/>
-	        </visual>
-	    </link>
-
-	    <joint name="forearm_to_${prefix}_EE" type="revolute">
-	    	<axis xyz="0 1 0"/>
-			<limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5"/>
-			<origin rpy="0.0 0.0 0.0" xyz="0.0 ${reflect*-0.168} 0.0"/>
-	        <parent link="${prefix}_forearm_cube"/>
-	        <child link="${prefix}_EE_flange"/>
-	    </joint>
-
-	</xacro:macro>
-
-
-
-
-	<!-- Ego Left Arm -->
-	<xacro:cube_shoulder prefix="left" reflect="-1"/>
-	<xacro:cube_arm prefix="left" reflect="-1"/>
-	<xacro:cube_elbow prefix="left" reflect="-1"/>
-	<xacro:cube_forearm prefix="left" reflect="-1"/>
-	<xacro:EE prefix="left" reflect="-1"/>
-
-	<!-- LEFT SOFTHAND -->
-	<xacro:soft_hand parent="left_EE_flange" name="left_hand" left="true" withAdaptiveTransmission="true" useMimicTag="true">
-	    <origin xyz="0 -0.05 0" rpy="-1.57075 1.57075 0"/>
-	</xacro:soft_hand>
-
-
-	<!-- Ego Right Arm -->
-	<xacro:cube_shoulder prefix="right" reflect="1"/>
-	<xacro:cube_arm prefix="right" reflect="1"/>
-	<xacro:cube_elbow prefix="right" reflect="1"/>
-	<xacro:cube_forearm prefix="right" reflect="1"/>
-	<xacro:EE prefix="right" reflect="1"/>
-	<!-- RIGHT SOFTHAND -->
-	<xacro:soft_hand parent="right_EE_flange" name="right_hand" left="false" withAdaptiveTransmission="true" useMimicTag="true">
-	    <origin xyz="0 0.05 0" rpy="1.57075 1.57075 0"/>
-	</xacro:soft_hand>
-
-
+      <visual>
+	<geometry>
+	    <mesh filename="package://ego_description/meshes/qbmove_pulley.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+	<origin xyz="0 ${reflect*0.053} 0" rpy="0 0 ${(reflect+1)*(3.14/2)}"/>
+      </visual>
 	
+      <inertial>
+	<origin xyz="0  ${reflect*2.5e-3} 1.36e-3 " rpy="0 0 0"/>
+	<mass value="0.591"/>
+	<inertia ixx="2.25e-4"  ixy="0"  	    ixz="0" 
+				iyy="1.92e-4" 	    iyz="0" 
+						    izz="2.00e-4" />
+      </inertial>
+      <collision>
+	<origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
+	<geometry>
+		<box size="0.07 0.07 0.07"/>
+	</geometry>
+      </collision>
+    </link>
+
+    <joint name="arm_to_${prefix}_elbow" type="revolute">
+      <axis xyz="0 1 0"/>
+	<limit effort="5.0" lower="-3.14" upper="3.14" velocity="0.5"/>
+	<origin rpy="0.0 0.0 0.0" xyz="0.0 ${reflect*-0.168} 0.0"/>
+      <parent link="${prefix}_arm_cube"/>
+      <child link="${prefix}_elbow_flange"/>
+    </joint>
+
+    <joint name="${prefix}_elbow_flange_to_cube" type="fixed">
+      <parent link="${prefix}_elbow_flange"/>
+      <child link="${prefix}_elbow_cube"/>
+    </joint>
+  </xacro:macro>
+
+  <xacro:macro name="cube_forearm" params="prefix reflect" >
+    <link name="${prefix}_forearm_flange">
+      <visual>
+	<material name="qbmove/flange"/>
+	<geometry>
+	    <mesh filename="package://ego_description/meshes/qb_c_flange.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+	<origin xyz="0 ${reflect*(0.033-0.09)} 0" rpy="${reflect*1.57075} -1.57075 0"/>
+      </visual>
+      <inertial>
+	<origin xyz="0 0 0" rpy="0 0 0"/>
+	<mass value="1e-7"/>
+	<inertia ixx="1e-8"  ixy="0"  	    ixz="0" 
+				iyy="1e-8" 	    iyz="0" 
+						    izz="1e-8" />
+      </inertial>
+    </link>
+
+    <link name="${prefix}_forearm_cube">
+      <visual>
+	<material name="qbmove/cube"/>
+	<geometry>
+	    <mesh filename="package://ego_description/meshes/qbmove_frame.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+	<origin xyz="0 ${reflect*(0.033-0.09)} 0" rpy="${reflect*1.57075} 3.14 0"/>
+      </visual>
+
+      <visual>
+	<geometry>
+	    <mesh filename="package://ego_description/meshes/qbmove_pulley.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+	<origin xyz="0 0 0.025" rpy="1.57075 0 0"/>
+      </visual>
+      <inertial>
+	<origin xyz="0  ${reflect*-0.07663} -1.78e-3 " rpy="0 0 0"/>
+	<mass value="0.353"/>
+	<inertia ixx="5.4e-4"  ixy="0"  	    ixz="0" 
+				iyy="2.06e-4" 	    iyz="0" 
+						    izz="4.82e-4" />
+      </inertial>
+      <collision>
+	  <origin rpy="0.0 0.0 0.0" xyz="0.0 ${reflect*(-0.09)} 0.0"/>
+	  <geometry>
+		  <box size="0.07 0.07 0.07"/>
+	  </geometry>
+      </collision>
+    </link>
+
+    <joint name="elbow_to_${prefix}_forearm" type="revolute">
+	<axis xyz="0 0 1"/>
+		<limit effort="5.0" lower="-1.57" upper="1.57" velocity="0.5"/>
+		<origin xyz="0.0 0 0" rpy="0 0.0 0"/>
+	<parent link="${prefix}_elbow_cube"/>
+	<child link="${prefix}_forearm_flange"/>
+    </joint>
+
+    <joint name="${prefix}_forearm_flange_to_cube" type="fixed">
+	<parent link="${prefix}_forearm_flange"/>
+	<child link="${prefix}_forearm_cube"/>
+    </joint>
+  </xacro:macro>
+
+  <xacro:macro name="EE" params="prefix reflect" >
+    <joint name="forearm_to_${prefix}_EE" type="revolute">
+      <axis xyz="0 1 0"/>
+	      <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="0.5"/>
+	      <origin rpy="0.0 0.0 0.0" xyz="0.0 ${reflect*-0.168} 0.0"/>
+      <parent link="${prefix}_forearm_cube"/>
+      <child link="${prefix}_flange_EE"/>
+    </joint>
+    
+    <link name="${prefix}_flange_EE">
+      <visual>
+	<material name="qbmove/flange"/>
+	<geometry>
+	  <mesh filename="package://ego_description/meshes/qb_flat_flange.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+	<origin rpy="${reflect*1.57075} 1.57075 0" xyz="0 ${reflect*0.033} 0"/>
+      </visual>
+      <inertial>
+	<origin xyz="0 0 0" rpy="0 0 0"/>
+	<mass value="1e-7"/>
+	<inertia ixx="1e-8"  ixy="0"  	    ixz="0" 
+				iyy="1e-8" 	    iyz="0" 
+						    izz="1e-8" />
+      </inertial>
+      <collision>
+	<material name="qbmove/flange"/>
+	<geometry>
+	  <mesh filename="package://ego_description/meshes/qb_flat_flange.stl" scale="0.001 0.001 0.001"/>
+	</geometry>
+	<origin rpy="${reflect*1.57075} 1.57075 0" xyz="0 ${reflect*0.033} 0"/>
+      </collision>
+    </link> 
+    
+    <link name="${prefix}_hand_EE">
+      <visual>
+	<material name="qbmove/cube"/>
+	<xacro:if value="${prefix == 'left'}">
+	  <geometry>
+	    <mesh filename="package://ego_description/meshes/qbh_hand_v2_ego_sx.stl" scale="0.001 0.001 0.001"/>
+	  </geometry>
+	</xacro:if>
+	<xacro:unless value="${prefix == 'left'}">
+	  <geometry>
+	  <mesh filename="package://ego_description/meshes/qbh_hand_v2_ego_dx.stl" scale="0.001 0.001 0.001"/>
+	  </geometry>
+	</xacro:unless> 
+	<origin rpy="1.57075 0 0" xyz="0.008 ${-reflect*0.07} -0.019"/>
+      </visual>
+      <inertial>
+	<origin rpy="0 0 0" xyz="4.62e-3 ${-reflect*0.062} -4.88e-3"/>
+	<mass value="0.381"/>
+	<inertia ixx="1.173e-3" ixy="0" ixz="0" iyy="2.83e-4" iyz="0" izz="1.33e-3"/>
+      </inertial>
+      <collision>
+	<material name="qbmove/cube"/>
+	<xacro:if value="${prefix == 'left'}">
+	  <geometry>
+	    <mesh filename="package://ego_description/meshes/qbh_hand_v2_ego_sx.stl" scale="0.001 0.001 0.001"/>
+	  </geometry>
+	</xacro:if>
+	<xacro:unless value="${prefix == 'left'}">
+	  <geometry>
+	  <mesh filename="package://ego_description/meshes/qbh_hand_v2_ego_dx.stl" scale="0.001 0.001 0.001"/>
+	  </geometry>
+	</xacro:unless> 
+	<origin rpy="1.57075 0 0" xyz="0.008 ${-reflect*0.07} -0.019"/>
+      </collision>
+    </link>
+	
+    <joint name="flange_to_${prefix}_EE" type="fixed">
+	<parent link="${prefix}_flange_EE"/>
+	<child link="${prefix}_hand_EE"/>
+    </joint>   
+  </xacro:macro>
+  
+
+  <!-- Ego Left Arm -->
+  <xacro:cube_shoulder prefix="left" reflect="-1"/>
+  <xacro:cube_arm prefix="left" reflect="-1"/>
+  <xacro:cube_elbow prefix="left" reflect="-1"/>
+  <xacro:cube_forearm prefix="left" reflect="-1"/>
+  <xacro:EE prefix="left" reflect="-1"/>
+
+  <!-- Ego Right Arm -->
+  <xacro:cube_shoulder prefix="right" reflect="1"/>
+  <xacro:cube_arm prefix="right" reflect="1"/>
+  <xacro:cube_elbow prefix="right" reflect="1"/>
+  <xacro:cube_forearm prefix="right" reflect="1"/>
+  <xacro:EE prefix="right" reflect="1"/>
+  
 <!-- Ego Left Wheel-->
 
-	<link name="wheel_L">
-		<visual>
-			<material name="wheel"/>
-			<geometry>
-				<!--<cylinder  length="0.1" radius="0.13"/>-->
-				<mesh filename="package://ego_description/meshes/Ego_wheel.stl" scale="0.001 0.001 0.001"/>
-			</geometry>
-			<origin xyz="0 0 0" rpy="1.57075 0 0"/>
-		</visual>
-	</link>
+  <link name="wheel_L">
+    <visual>
+      <material name="wheel"/>
+      <geometry>
+	  <mesh filename="package://ego_description/meshes/Ego_wheel.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="1.57075 0 0"/>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.22"/>
+      <inertia ixx="3.21e-3"  ixy="0"  	    ixz="0" 
+			      iyy="5.31e-3" 	    iyz="0" 
+						  izz="3.21e-3" />
+    </inertial>
+    <collision>
+      <geometry>
+	<cylinder length="0.07" radius="0.13"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="1.57075 0 0"/>
+    </collision>
+  </link>
 
-	<joint name="L_joint_baseW" type="continuous">
-		    <axis xyz="0 1 0"/>
-		    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.248 0.0"/> 
-		    <parent link="base_link"/>
-		    <child link="wheel_L"/>
-	</joint>
+  <joint name="L_joint_baseW" type="continuous">
+    <axis xyz="0 1 0"/>
+    <limit effort="5.0" velocity="1"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 0.248 0.0"/>
+    <parent link="base_link"/>
+    <child link="wheel_L"/>
+  </joint>
 
 <!-- Ego Right Wheel-->
 
-	<link name="wheel_R">
-		<visual>
-			<material name="wheel"/>
-			<geometry>
-				<!--<cylinder  length="0.1" radius="0.13"/>-->
-				<mesh filename="package://ego_description/meshes/Ego_wheel.stl" scale="0.001 0.001 0.001"/>
-			</geometry>
-			<origin xyz="0 0 0" rpy="1.57075 0 0"/>
-		</visual>
-	</link>
+  <link name="wheel_R">
+    <visual>
+      <material name="wheel"/>
+      <geometry>
+	<mesh filename="package://ego_description/meshes/Ego_wheel.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="1.57075 0 0"/>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.22"/>
+      <inertia ixx="3.21e-3"  ixy="0"  	    ixz="0" 
+			      iyy="5.31e-3" 	    iyz="0" 
+						  izz="3.21e-3" />
+    </inertial>
+    <collision>
+      <geometry>
+	<cylinder length="0.07" radius="0.13"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="1.57075 0 0"/>
+    </collision>
+  </link>
 
-	<joint name="R_joint_baseW" type="continuous">
-		    <axis xyz="0 1 0"/>
-		    <origin rpy="0.0 0.0 0.0" xyz="0.0 -0.248 0.0"/> 
-		    <parent link="base_link"/>
-		    <child link="wheel_R"/>
-	</joint>
-
-
-
-
-
-
-	
-
-
-
-
+  <joint name="R_joint_baseW" type="continuous">
+    <axis xyz="0 1 0"/>
+    <limit effort="5.0" velocity="1.0"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.0 -0.248 0.0"/> 
+    <parent link="base_link"/>
+    <child link="wheel_R"/>
+  </joint>
 </robot>

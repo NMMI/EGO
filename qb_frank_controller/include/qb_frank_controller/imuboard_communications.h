@@ -1,4 +1,3 @@
-
 // Copyright (c) 2016, Mattia Poggiani.
 // All rights reserved.
 //

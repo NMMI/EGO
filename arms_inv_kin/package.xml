@@ -2,43 +2,17 @@
 <package>
   <name>arms_inv_kin</name>
   <version>0.0.0</version>
-  <description>The arms_inv_kin package</description>
+  <description>This package contains the ROS node to perform the inverse kinematics of Alter-Ego arms</description>
+  
+  <maintainer email="g.lentini88@gmail.com">Gianluca Lentini</maintainer>
+  <maintainer email="michele.maimeri@iit.it">Michele Maimeri</maintainer>
+  <maintainer email="gr.zambella@gmail.com">Grazia Zambella</maintainer>
 
-  <!-- One maintainer tag required, multiple allowed, one person per tag --> 
-  <!-- Example:  -->
-  <!-- <maintainer email="jane.doe@example.com">Jane Doe</maintainer> -->
-  <maintainer email="frank@todo.todo">frank</maintainer>
+  <license>BSD 3-Clause License</license>
+  <author>NMMI</author>
+  <author>Istituto Italiano di Tecnologia, Soft Robotics for Human Cooperation and Rehabilitation Lab</author>
+  <author>Centro di Ricerca E. Piaggio</author>
 
-
-  <!-- One license tag required, multiple allowed, one license per tag -->
-  <!-- Commonly used license strings: -->
-  <!--   BSD, MIT, Boost Software License, GPLv2, GPLv3, LGPLv2.1, LGPLv3 -->
-  <license>TODO</license>
-
-
-  <!-- Url tags are optional, but multiple are allowed, one per tag -->
-  <!-- Optional attribute type can be: website, bugtracker, or repository -->
-  <!-- Example: -->
-  <!-- <url type="website">http://wiki.ros.org/arms_inv_kin</url> -->
-
-
-  <!-- Author tags are optional, multiple are allowed, one per tag -->
-  <!-- Authors do not have to be maintainers, but could be -->
-  <!-- Example: -->
-  <!-- <author email="jane.doe@example.com">Jane Doe</author> -->
-
-
-  <!-- The *_depend tags are used to specify dependencies -->
-  <!-- Dependencies can be catkin packages or system dependencies -->
-  <!-- Examples: -->
-  <!-- Use build_depend for packages you need at compile time: -->
-  <!--   <build_depend>message_generation</build_depend> -->
-  <!-- Use buildtool_depend for build tool packages: -->
-  <!--   <buildtool_depend>catkin</buildtool_depend> -->
-  <!-- Use run_depend for packages you need at runtime: -->
-  <!--   <run_depend>message_runtime</run_depend> -->
-  <!-- Use test_depend for packages you need only for testing: -->
-  <!--   <test_depend>gtest</test_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>kdl_parser</build_depend>
   <build_depend>roscpp</build_depend>
@@ -56,13 +30,8 @@
   <run_depend>kdl_parser</run_depend>
   <run_depend>kdl_conversions</run_depend>
   <run_depend>ros_myo</run_depend>
-  
 
-
-
-  <!-- The export tag contains other, unspecified, tags -->
   <export>
     <!-- Other tools can request additional information be placed here -->
-
   </export>
 </package>
